@@ -1,0 +1,2 @@
+import React from "react";
+export default function CandidateCard({candidate,selected,onSelect,disabled,showVotes=false}){return <button type="button" className={`candidate-card ${selected?"candidate-selected":""}`} onClick={()=>onSelect?.(candidate.id)} disabled={disabled}><span className="candidate-avatar">{candidate.name?.charAt(0)?.toUpperCase()}</span><span className="candidate-info"><strong>{candidate.name}</strong><small>{candidate.description||"Candidate"}</small></span>{showVotes&&<strong>{candidate.voteCount} votes</strong>}{selected&&<span>✓</span>}</button>}

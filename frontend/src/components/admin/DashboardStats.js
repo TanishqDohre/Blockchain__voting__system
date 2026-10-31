@@ -1,0 +1,2 @@
+import React from "react";
+export default function DashboardStats({ elections }) { const candidates = elections.reduce((n, e) => n + (e.candidateCount || 0), 0); const votes = elections.reduce((n, e) => n + (e.totalVotes || 0), 0); return <div className="stats-grid">{[["Elections", elections.length],["Candidates", candidates],["Votes recorded", votes]].map(([label, value]) => <div className="stat-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>; }
